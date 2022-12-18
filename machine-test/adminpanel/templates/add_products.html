@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>add products</title>
+    <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+</head>
+<body>
+    <div class="container-fluid">
+<div class="container">
+<h2>{{title}}</h2>
+<a href="{%url 'dashboard'%}">Dashboard</a>
+    <form class="form-group" action="{{request.get_full_path}}" method="post" enctype="multipart/form-data">
+        {%csrf_token%}
+        <label for="">Product Name</label>
+        <input type="text"class="form-control" name="product_name" value="{{product.product_name}}" id="">
+        <label for="">Price</label>
+<input type="number"class="form-control" name="price" value="{{product.price}}" id="">
+<label for="">Quantity</label>
+<input type="number"class="form-control" name="quantity" value="{{product.quantity}}" id="">
+<label for="">Product Image</label>
+
+<input type="file"class="form-control" name="product_image" id="">
+{%if product.Image %}
+<img style="height: 50px;" src="{{product.Image}}" alt="">
+{%endif%}
+
+<input type="submit" class="btn btn-success" value="Submit">
+    </form>
+
+</div>
+
+    </div>
+
+
+    <!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+<script></script>    
+</body>
+</html>
